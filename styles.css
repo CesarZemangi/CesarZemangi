@@ -1,0 +1,183 @@
+/* Reset default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #3B1F1F; /* Deep brown background */
+    color: #F4E1C1; /* Soft cream text for contrast */
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #4B2E2E; /* Rich brown */
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: #FFA500; /* Burnt orange */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 18px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    color: #FFD580; /* Golden yellow highlight */
+    background: rgba(255, 165, 0, 0.2);
+    border-radius: 5px;
+}
+
+/* Fix content overlapping with navbar */
+body {
+    padding-top: 80px; /* Adjusted for better spacing */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: #2F1717; /* Darker brown for contrast */
+}
+
+.hero h1 {
+    font-size: 42px;
+    color: #FFD700; /* Gold */
+}
+
+.hero .subtitle {
+    font-size: 22px;
+    color: #FFA500; /* Burnt orange */
+}
+
+/* About Me Section */
+.about-me {
+    text-align: center;
+    padding: 60px 20px;
+    background: #4E2828;
+}
+
+.about-me h2 {
+    color: #FFD700; /* Gold */
+}
+
+/* Portfolio Section */
+.portfolio {
+    text-align: center;
+    padding: 50px 20px;
+    background: #5A2E2E;
+}
+
+.portfolio h2 {
+    color: #FFD700;
+}
+
+.projects {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: #3B1F1F;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: #FFD580;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Oval Image with Golden Glow */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.about-me {
+    display: flex;
+    align-items: center; /* Aligns text and image in the same line */
+    justify-content: space-between; /* Pushes text left and image right */
+    max-width: 60%;
+    margin: 60px auto;
+    padding: 40px;
+    background: #4E2828;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+    flex: 1; /* Takes most of the space on the left */
+    text-align: left;
+    font-size: 24px;
+    color: #FFD700; /* Gold */
+}
+
+.image-container {
+    flex: 0.3; /* Adjusts image width */
+    display: flex;
+    justify-content: flex-end; /* Moves image to the right */
+}
+
+.developer-image {
+    width: 180px;
+    height: 230px;
+    border-radius: 50%; /* Oval shape */
+    border: 5px solid #FFD700; /* Golden glow */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+}
+.sidebar {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.sidebar a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar a img:hover {
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #4B2E2E;
+    color: white;
+}

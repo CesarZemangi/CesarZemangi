@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <style>
+        /* CSS for styling the weather dashboard */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
+        }
+        .weather-dashboard {
+            width: 100%;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .weather-dashboard input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .weather-dashboard button {
+            padding: 10px 20px;
+            background-color: #4facfe;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .weather-dashboard button:hover {
+            background-color: #00c3fe;
+        }
+        .weather-info {
+            margin-top: 20px;
+        }
+        .weather-info p {
+            margin: 5px 0;
+        }
+        .weather-icon {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="weather-dashboard">
+        <h1>Weather Dashboard</h1>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getWeather()">Get Weather</button>
+        <div class="weather-info" id="weatherInfo"></div>
+    </div>
+
+    <script>
+        const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+
+        async function getWeather() {
+            const city = document.getElementById('cityInput').value;
+            if (city === '') {
+                alert('Please enter a city name.');
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+                const data = await response.json();
+
+                if (data.cod === '404') {
+                    alert('City not found. Please enter a valid city name.');
+                    return;
+                }
+
+                // Extract weather information
+                const temperature = data.main.temp;
+                const description = data.weather[0].description;
+                const humidity = data.main.humidity;
+                const windSpeed = data.wind.speed;
+                const icon = data.weather[0].icon;
+
+                // Display weather information
+                document.getElementById('weatherInfo').innerHTML = `
+                    <p><strong>City:</strong> ${city}</p>
+                    <p><img class="weather-icon" src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon"></p>
+                    <p><strong>Temperature:</strong> ${temperature}°C</p>
+                    <p><strong>Description:</strong> ${description.charAt(0).toUpperCase() + description.slice(1)}</p>
+                    <p><strong>Humidity:</strong> ${humidity}%</p>
+                    <p><strong>Wind Speed:</strong> ${windSpeed} m/s</p>
+                `;
+            } catch (error) {
+                alert('Error fetching weather data. Please try again later.');
+                console.error(error);
+            }
+        }
+    </script>
+</body>
+</html>

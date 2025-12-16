@@ -1,8 +1,8 @@
-Hello, I am Cesar Zemangi.
+Hello, I am Ceasar Zemangi Ujika.
 Full stack developer in training, focused on frontend and backend fundamentals.
 Interested in data science, cybersecurity, and mobile application development.
 Building database driven projects and personal web portfolios.
-Currently learning SQL and core backend concepts.
+Currently learning SQL and core backend concepts. I am currently working on Mental Health Support System, and EduNest Learning Platform. 
 Open to collaboration on student management and education focused systems.
 
 <!---
